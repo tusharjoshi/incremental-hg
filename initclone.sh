@@ -32,5 +32,5 @@ LOCAL_NAME=
 
 # cloning only first 10 changesets
 echo Starting the cloning process.
-hg --debug --verbose %PROXY_OPTS% clone %REPO_PATH% -r 10 %LOCAL_NAME%
+hg --debug --verbose clone $REPO_PATH -r 10 $LOCAL_NAME
 echo "Cloning 10 changesets done."
