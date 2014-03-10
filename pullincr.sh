@@ -30,14 +30,23 @@
 
 fetchsize=100
 
+# function for setting terminal titles in OSX
+function title {
+  printf "\033]0;%s\007" "$1"
+}
+
 # get the last changeset number from repo
 index=`hg log -l 1 | sed -n 1p | cut -d" " -f4 | cut -d":" -f1`
+iteration=0
 echo "The local repo has highest changeset: $index"
 
 # start the fetch loop for next 100 changesets
 while :
 do
 index=$((index+fetchsize))
+iteration=$((iteration+1))
+title "Iteration $iteration changeset $index"
+
 echo "Fetching changesets till index: $index"
 hg --debug --verbose pull -r $index
 
