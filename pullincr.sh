@@ -1,3 +1,5 @@
+#!/bin/bash
+#
 # The MIT License (MIT)
 # 
 # Copyright (c) 2014 Tushar Joshi
