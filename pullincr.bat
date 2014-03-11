@@ -39,7 +39,7 @@ set PROXY_USER=username
 set PROXY_PASS=password 
 
 REM Lines below should work without any changes
-if "$USE_PROXY" EQU "true" (
+if "%USE_PROXY%" EQU "true" (
 set PROXY_OPTS=--config http_proxy.host=%PROXY_HOST%:%PROXY_PORT% --config http_proxy.user=%PROXY_USER% --config http_proxy.passwd=%PROXY_PASS%
 ) else (
 set PROXY_OPTS=
