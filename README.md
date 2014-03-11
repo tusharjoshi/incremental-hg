@@ -4,6 +4,7 @@ incremental-hg
 Scripts to clone few change-sets and to pull change-sets incrementally from a Mercurial repository, for connections which may reset. This helps to optimise the downloads.
 
 Works and tested on:
+
 1. Windows 8.1
 2. Mac OS X Mavericks
 3. Linux
