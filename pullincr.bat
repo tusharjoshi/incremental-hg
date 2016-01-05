@@ -52,6 +52,9 @@ set /a iteration=0
 
 :start
 
+echo Recover any incomplete change
+hg recover
+
 set /a index=%index%+100
 set /a iteration=%iteration%+1
 TITLE Iteration %iteration% changeset %index%

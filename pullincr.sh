@@ -37,6 +37,9 @@ function title {
   printf "\033]0;%s\007" "$1"
 }
 
+echo Recover any incomplete change
+hg recover
+
 # get the last changeset number from repo
 index=`hg log -l 1 | sed -n 1p | cut -d" " -f4 | cut -d":" -f1`
 iteration=0
