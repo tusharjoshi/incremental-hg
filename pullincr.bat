@@ -45,15 +45,15 @@ set PROXY_OPTS=--config http_proxy.host=%PROXY_HOST%:%PROXY_PORT% --config http_
 set PROXY_OPTS=
 )
 
+echo Recover any incomplete change
+hg recover
+
 for /f "tokens=*" %%i in ('hg log -l 1 ^| sed -n 1p ^| cut -d" " -f4 ^| cut -d":" -f1') do set index=%%i
 echo The local repo has highest changeset: %index%
 
 set /a iteration=0
 
 :start
-
-echo Recover any incomplete change
-hg recover
 
 set /a index=%index%+100
 set /a iteration=%iteration%+1
